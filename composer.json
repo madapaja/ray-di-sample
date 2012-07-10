@@ -8,7 +8,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Aura\\Di": "vendor/Aura/Di/src/"
+            "Aura\\Di": "vendor/Aura/Di/src/",
+            "Madapaja\\Ray\\Di\\Sample01": "src"
         }
     }
 }
