@@ -21,4 +21,9 @@ class User
         $sth = $this->db->prepare('INSERT INTO User (Name, Age) VALUES (:name, :age)');
         return $sth->execute(array(':name' => $name, ':age' => $age));
     }
+
+    public function readUsers()
+    {
+
+    }
 }

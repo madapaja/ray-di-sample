@@ -53,4 +53,28 @@ class UserTest extends BaseTest
         $this->assertEquals($age, $user[1], '挿入された年齢のテスト');
     }
 
+    /**
+     * @test
+     */
+    public function readUsers()
+    {
+        $this->user->init();
+
+        $defaultNum = $this->db->query('SELECT COUNT(*) FROM User', \PDO::FETCH_NUM)->fetch()[0];
+        $this->user->createUser('madapaja', 30);
+        $this->user->createUser('bear', 40);
+        $this->user->createUser('sunday', 50);
+
+        $num = $defaultNum + 3;
+
+        $result = $this->user->readUsers();
+
+        $this->assertTrue(is_array($result), '返り値が配列か');
+        $this->assertSame($num, count($result), '返り値のカウントをテスト');
+
+        foreach ($result as $row) {
+            $this->assertTrue(!!$row['Name'], '名前が返ってきているか');
+            $this->assertTrue(!!$row['Age'], '年齢が返ってきているか');
+        }
+    }
 }
