@@ -5,6 +5,7 @@ namespace Madapaja\Ray\Di\Sample01\Model;
 use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
 use Ray\Di\Di\PostConstruct;
+use Madapaja\Ray\Di\Sample01\Annotation\Transactional;
 
 /**
  * @TODO:Annotationクラスにアクセスしないとアノテーションが認識されない
@@ -35,6 +36,9 @@ class User
         return $this->db->query('CREATE TABLE User (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)');
     }
 
+    /**
+     * @Transactional
+     */
     public function createUser($name, $age)
     {
         $sth = $this->db->prepare('INSERT INTO User (Name, Age) VALUES (:name, :age)');
