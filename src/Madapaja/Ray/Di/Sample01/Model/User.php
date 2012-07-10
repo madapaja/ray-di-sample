@@ -13,6 +13,6 @@ class User
 
     public function init()
     {
-
+        return $this->db->query("CREATE TABLE User (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)");
     }
 }
