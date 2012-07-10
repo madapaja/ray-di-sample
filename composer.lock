@@ -16,8 +16,8 @@
         {
             "package": "Ray/Di",
             "version": "dev-master",
-            "source-reference": "d8863f631ab1f60dd9d17834b280d882f1e09923",
-            "commit-date": "1341819559"
+            "source-reference": "b43ccdc3597e0f2551ed33ad57f85f70862aef6a",
+            "commit-date": "1341918620"
         },
         {
             "package": "doctrine/common",
