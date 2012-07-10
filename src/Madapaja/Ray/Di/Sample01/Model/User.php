@@ -4,6 +4,7 @@ namespace Madapaja\Ray\Di\Sample01\Model;
 
 use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
+use Ray\Di\Di\PostConstruct;
 
 /**
  * @TODO:Annotationクラスにアクセスしないとアノテーションが認識されない
@@ -11,6 +12,7 @@ use Ray\Di\Di\Named;
  */
 new Inject;
 new Named;
+new PostConstruct;
 
 class User
 {
@@ -25,6 +27,9 @@ class User
         $this->db = $pdo;
     }
 
+    /**
+     * @PostConstruct
+     */
     public function init()
     {
         return $this->db->query('CREATE TABLE User (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)');

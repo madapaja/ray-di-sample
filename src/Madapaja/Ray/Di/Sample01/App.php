@@ -20,7 +20,6 @@ class App
 
         $user = $di->getInstance('Madapaja\Ray\Di\Sample01\Model\User');
 
-        $user->init();
         $user->createUser('Koriym', rand(18,35));
         $user->createUser('Bear', rand(18,35));
         $user->createUser('Yoshi', rand(18,35));
