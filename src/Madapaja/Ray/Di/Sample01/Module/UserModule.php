@@ -15,11 +15,18 @@ class UserModule extends AbstractModule
         $pdo = new \PDO('sqlite::memory:', null, null);
         $this->bind('PDO')->annotatedWith('pdo_user')->toInstance($pdo);
 
+        // bind aspect Timer
+        $this->bindInterceptor(
+            $this->matcher->any(),
+            $this->matcher->any(),
+            [new Timer]
+        );
+
         // bind aspect @Transactional method
         $this->bindInterceptor(
             $this->matcher->any(),
             $this->matcher->annotatedWith('Madapaja\Ray\Di\Sample01\Annotation\Transactional'),
-            [new Timer, new Transaction]
+            [new Transaction]
         );
 
         // bind aspect @Template method
