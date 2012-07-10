@@ -24,6 +24,8 @@ class User
 
     public function readUsers()
     {
-
+        $sth = $this->db->query('SELECT Name, Age FROM User');
+        $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
     }
 }
