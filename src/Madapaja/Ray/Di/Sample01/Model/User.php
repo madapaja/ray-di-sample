@@ -7,14 +7,6 @@ use Ray\Di\Di\Named;
 use Ray\Di\Di\PostConstruct;
 use Madapaja\Ray\Di\Sample01\Annotation\Transactional;
 
-/**
- * @TODO:Annotationクラスにアクセスしないとアノテーションが認識されない
- *      原因は多分、useだけだとautoloadでincludeされないから
- */
-new Inject;
-new Named;
-new PostConstruct;
-
 class User
 {
     private $db;
