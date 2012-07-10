@@ -10,4 +10,9 @@ class User
     {
         $this->db = $pdo;
     }
+
+    public function init()
+    {
+
+    }
 }
