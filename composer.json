@@ -1,0 +1,14 @@
+{
+    "require": {
+        "php": ">=5.4.0",
+        "Ray/Di": ">=1.0.x-dev",
+        "doctrine/common": "2.3.x-dev",
+        "Ray/Aop": ">=1.0.x-dev",
+        "Aura/Di": ">=1.0.x-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Aura\\Di": "vendor/Aura/Di/src/"
+        }
+    }
+}
