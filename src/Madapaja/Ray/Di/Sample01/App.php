@@ -25,6 +25,6 @@ class App
         $user->createUser('Yoshi', rand(18,35));
 
         $users = $user->readUsers();
-        var_export($users);
+        print_r($users);
     }
 }
