@@ -2,10 +2,24 @@
 
 namespace Madapaja\Ray\Di\Sample01\Model;
 
+use Ray\Di\Di\Inject;
+use Ray\Di\Di\Named;
+
+/**
+ * @TODO:Annotationクラスにアクセスしないとアノテーションが認識されない
+ *      原因は多分、useだけだとautoloadでincludeされないから
+ */
+new Inject;
+new Named;
+
 class User
 {
     private $db;
 
+    /**
+     * @Inject
+     * @Named("pdo=pdo_user")
+     */
     public function __construct(\PDO $pdo)
     {
         $this->db = $pdo;
