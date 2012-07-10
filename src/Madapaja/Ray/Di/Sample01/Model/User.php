@@ -15,4 +15,9 @@ class User
     {
         return $this->db->query('CREATE TABLE User (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)');
     }
+
+    public function createUser($name, $age)
+    {
+
+    }
 }
