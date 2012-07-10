@@ -6,6 +6,7 @@ use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
 use Ray\Di\Di\PostConstruct;
 use Madapaja\Ray\Di\Sample01\Annotation\Transactional;
+use Madapaja\Ray\Di\Sample01\Annotation\Template;
 
 class User
 {
@@ -37,6 +38,9 @@ class User
         return $sth->execute(array(':name' => $name, ':age' => $age));
     }
 
+    /**
+     * @Template
+     */
     public function readUsers()
     {
         $sth = $this->db->query('SELECT Name, Age FROM User');
